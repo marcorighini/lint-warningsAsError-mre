@@ -9,6 +9,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         findViewById<TextView>(R.id.textView).text =
-            getString(com.example.core.R.string.cross_module_string)
+            getString(R.string.cross_module_string_2)
     }
 }

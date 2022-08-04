@@ -4,8 +4,6 @@ plugins {
 }
 
 android {
-    compileSdk 32
-
     lint {
         lintConfig file("lint-custom.xml")
         abortOnError true
@@ -14,6 +12,19 @@ android {
         ignoreTestSources true
         enable 'ConvertToWebp'
     }
+}
+
+android {
+    compileSdk 32
+
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/LICENSE', 'META-INF/LICENSE-FIREBASE.txt', 'META-INF/notice.txt', 'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/rxjava.properties', 'META-INF/*.kotlin_module']
+            pickFirsts += ['mockito-extensions/org.mockito.plugins.MockMaker']
+        }
+    }
+    sourceSets.test.resources.srcDirs += ["src/main"]
+
     defaultConfig {
         applicationId "com.marcorighini.lint_mre"
         minSdk 21
@@ -27,7 +38,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+        }
+        debug {
+            isDefault true
+            signingConfig null
+            minifyEnabled false
+            shrinkResources false
         }
     }
     compileOptions {
@@ -36,6 +53,17 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    flavorDimensions.add("dimension")
+    productFlavors {
+        production {
+        }
+        staging {
+            isDefault true
+        }
+        internal {
+        }
     }
 }
 

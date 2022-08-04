@@ -22,3 +22,5 @@ rootProject.name = "Lint mre"
 
 include ':app'
 include ':core'
+include ':core:coredep'
+include ':coredepdep'

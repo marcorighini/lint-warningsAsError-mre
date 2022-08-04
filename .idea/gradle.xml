@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/coredep" />
+            <option value="$PROJECT_DIR$/coredepdep" />
           </set>
         </option>
       </GradleProjectSettings>
