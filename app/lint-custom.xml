@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+  <issue id="HardwareIds" severity="ignore" />
+  <issue id="LintBaseline" severity="ignore" />
+  <issue id="ContentDescription" severity="ignore" />
+  <issue id="VisibleForTests" severity="error" />
+  <issue id="LockedOrientationActivity" severity="ignore" />
+  <issue id="ConvertToWebp" severity="warning">
+    <ignore path="*/mipmap-xxxhdpi/*"/>
+    <ignore path="*/mipmap-xxhdpi/*"/>
+    <ignore path="*/mipmap-xhdpi/*"/>
+    <ignore path="*/mipmap-hdpi/*"/>
+    <ignore path="*/mipmap-mdpi/*"/>
+  </issue>
+  <issue id="UnusedResources">
+    <ignore path="*/.gradle/caches/*" />
+  </issue>
+  <issue id="ObsoleteLintCustomCheck" severity="ignore" />
+</lint>
